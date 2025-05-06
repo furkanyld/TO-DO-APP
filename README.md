@@ -20,17 +20,9 @@ Bu proje, staj değerlendirme süreci kapsamında geliştirilen bir **TO-DO uygu
 
 ---
 
-## ✍️ Notlar
+## ℹ️ Not
 
-- Proje Clean Architecture ve MVC mimarisine uygun olarak yapılandırılmıştır.
-- Veriler geçici olarak bellekte (mock veri) tutulur, veritabanı bağlantısı içermez.
-- Silme işlemleri kalıcı değildir, sadece `DeletedAt` tarihi atanır.
-
----
-
-## ℹ️ Not: Commit Sayısı Hakkında
-
-Proje geliştirme sürecinde local ortamda düzenli çalıştım ve birçok aşamada ilerleme kaydettim. Ancak Git versiyonlamasına başta yeterince dikkat etmediğim için, bazı geliştirme adımlarını `commit` ile kaydetmeyi atladım. Bu yüzden son aşamada, projenin tüm fonksiyonel gereksinimlerini tamamlayıp tek seferde versiyonladım. Commit sayısının az olmasından dolayı bir açıklama gereği hissettim.
+🧭 Bu proje sürecinde GoLang'e tamamen yeni başlamış olmama rağmen, araştırarak ve destek alarak uygulamanın tüm işlevlerini öğrenmeye çalışarak bu projeyi geliştirdim. Proje geliştirme sürecinde local ortamda düzenli çalıştım ve birçok aşamada ilerleme kaydettim. Ancak Git versiyonlamasına başta yeterince dikkat etmediğim için, bazı geliştirme adımlarını `commit` ile kaydetmeyi atladım. Bu yüzden son aşamada, projenin tüm fonksiyonel gereksinimlerini tamamlayıp tek seferde versiyonladım. Commit sayısının az olmasından dolayı bir açıklama gereği hissettim.
  
 Teşekkür ederim.
 
@@ -176,6 +168,14 @@ Uygulama `http://localhost:8080` üzerinden çalışır.
 
 - **admin** → Tüm kullanıcıların listelerini ve maddelerini görebilir/güncelleyebilir/silebilir.
 - **user** → Sadece kendi oluşturduğu liste ve maddeleri görebilir/güncelleyebilir/silebilir.
+
+---
+
+## ✍️ Notlar
+
+- Proje Clean Architecture ve MVC mimarisine uygun olarak yapılandırılmıştır.
+- Veriler geçici olarak bellekte (mock veri) tutulur, veritabanı bağlantısı içermez.
+- Silme işlemleri kalıcı değildir, sadece `DeletedAt` tarihi atanır.
 
 ---
 
