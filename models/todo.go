@@ -2,7 +2,6 @@ package models
 
 import "time"
 
-// TO-DO Listesi
 type TodoList struct {
 	ID             int
 	Name           string
@@ -10,10 +9,9 @@ type TodoList struct {
 	UpdatedAt      time.Time
 	DeletedAt      *time.Time
 	CompletionRate float32
-	Username       string // Listeyi oluşturan kullanıcı
+	Username       string // Creator
 }
 
-// TO-DO Listesine ait adımlar
 type TodoItem struct {
 	ID        int
 	ListID    int
@@ -22,4 +20,5 @@ type TodoItem struct {
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt *time.Time
+	Username  string // Creator
 }

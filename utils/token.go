@@ -8,14 +8,12 @@ import (
 
 var jwtKey = []byte("gizliAnahtar")
 
-// Token'a eklenecek veriler
 type Claims struct {
 	Username string
 	Role     string
 	jwt.RegisteredClaims
 }
 
-// Token oluştur
 func GenerateJWT(username, role string) (string, error) {
 	claims := &Claims{
 		Username: username,
@@ -30,7 +28,6 @@ func GenerateJWT(username, role string) (string, error) {
 	return token.SignedString(jwtKey)
 }
 
-// Token çözümleme
 func ParseToken(t string) (*Claims, error) {
 	claims := &Claims{}
 

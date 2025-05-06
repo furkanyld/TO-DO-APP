@@ -1,24 +1,14 @@
 package main
 
 import (
-	"todo-app/controllers"
-	"todo-app/middleware"
+	"todo-app/routes"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	r := gin.Default()
+	router := gin.Default()
+	routes.SetupRoutes(router)
 
-	r.POST("/login", controllers.Login)
-
-	// Auth gerektiren grup
-	auth := r.Group("/")
-	auth.Use(middleware.AuthMiddleware())
-	{
-		auth.GET("/todos", controllers.GetTodos)
-		auth.POST("/todos", controllers.CreateTodo)
-	}
-
-	r.Run(":8080")
+	router.Run(":8080")
 }
