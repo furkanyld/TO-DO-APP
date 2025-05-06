@@ -3,6 +3,8 @@
 
 Bu proje, staj değerlendirme süreci kapsamında geliştirilen bir **TO-DO uygulamasının backend** servisidir. Uygulama, kullanıcıların yapılacaklar listesi oluşturup bu listelere maddeler (adımlar) eklemesine olanak tanır. Geliştirme dili olarak **GoLang** seçilmiş, web çatısı olarak ise **Gin Gonic Framework** kullanılmıştır.
 
+---
+
 ## 🚀 Özellikler
 
 - ✅ JWT (JSON Web Token) ile kimlik doğrulama
@@ -13,7 +15,9 @@ Bu proje, staj değerlendirme süreci kapsamında geliştirilen bir **TO-DO uygu
 - ✅ Güncelleme tarihi kaydı
 - ✅ Mock servis üzerinden veri saklama (veritabanı bağımsız)
 - ✅ Yetki kontrolü: kullanıcılar sadece kendi verilerini yönetebilir, admin tüm verileri görebilir
+- ✅ TO-DO listeleri ve maddeleri için kapsamlı birim testler (CRUD, yetki kontrolü, soft delete dahil)
 
+---
 
 ## ✍️ Notlar
 
@@ -21,6 +25,7 @@ Bu proje, staj değerlendirme süreci kapsamında geliştirilen bir **TO-DO uygu
 - Veriler geçici olarak bellekte (mock veri) tutulur, veritabanı bağlantısı içermez.
 - Silme işlemleri kalıcı değildir, sadece `DeletedAt` tarihi atanır.
 
+---
 
 ## ℹ️ Not: Commit Sayısı Hakkında
 
@@ -28,6 +33,7 @@ Proje geliştirme sürecinde local ortamda düzenli çalıştım ve birçok aşa
  
 Teşekkür ederim.
 
+---
 
 ## 👤 Kullanıcılar (Ön Tanımlı)
 
@@ -37,6 +43,8 @@ Teşekkür ederim.
 | `user`        | `user123` | user  |
 
 Bu kullanıcılar `mock_data.go` dosyasında tanımlıdır.
+
+---
 
 ## 🧪 API Endpointleri
 
@@ -52,6 +60,7 @@ POST /login
 }
 ```
 
+---
 
 ### 📋 TO-DO Listeleri
 
@@ -61,19 +70,16 @@ POST /createTodo
 Body: { "name": "Alışveriş Listesi" }
 ```
 
-
 #### 📖 Liste Görüntüle
 ```http
 GET /getTodos
 ```
-
 
 #### ✏️ Liste Güncelle
 ```http
 PUT /updateTodo/:id
 Body: { "name": "Yeni Liste Adı" }
 ```
-
 
 #### 🗑️ Liste Sil
 ```http
@@ -82,7 +88,6 @@ DELETE /deleteTodo/:id
 
 ---
 
-
 ### ✅ Liste Maddeleri (Items)
 
 #### ➕ Madde Ekle
@@ -90,7 +95,6 @@ DELETE /deleteTodo/:id
 POST /lists/:id/addItem
 Body: { "content": "Süt al" }
 ```
-
 
 #### 📖 Maddeleri Listele
 ```http
@@ -103,12 +107,33 @@ PUT /updateItem/:id
 Body: { "content": "Süt ve ekmek al", "isDone": true }
 ```
 
-
 #### 🗑️ Madde Sil
 ```http
 DELETE /deleteItem/:id
 ```
 
+---
+
+### 📌 Test Kapsamı
+
+Yazılan testler sayesinde projenin aşağıdaki temel işlevleri doğrulanmıştır:
+
+- TO-DO Listesi ve Madde (Item) oluşturma
+- Liste ve madde güncelleme işlemlerinde yetki kontrolü
+- Soft delete uygulanan verilerin tekrar gösterilmemesi
+- Kullanıcıya özel ve tüm liste görüntüleme senaryoları
+- Veri bütünlüğü ve ilişkisel bağ kontrolü (ListID, Username eşleşmeleri)
+
+Testler yalnızca başarı senaryolarını değil, yetkisiz erişim gibi başarısız durumları da kapsamaktadır. Tüm testler `go test ./...` komutu ile başarıyla geçmektedir.
+
+Testler, Go’nun standart test yapısına uygun olarak `data/` klasöründeki `*_test.go` dosyalarında tanımlanmıştır.
+
+### 🔍 Test Çıktısı Örneği
+```bash
+ok todo-app/data 0.921s
+```
+
+---
 
 ## 📁 Proje Yapısı
 
@@ -124,6 +149,7 @@ todo-app/
 └── utils/                # JWT üretim/fonksiyonları
 ```
 
+---
 
 ## 📦 Kullanılan Teknolojiler
 
@@ -131,6 +157,7 @@ todo-app/
 - Gin Gonic Framework
 - JWT (github.com/golang-jwt/jwt/v4)
 
+---
 
 ## 🛠️ Kurulum ve Çalıştırma
 
@@ -142,22 +169,26 @@ go run main.go
 
 Uygulama `http://localhost:8080` üzerinden çalışır.
 
+---
 
 ## 🔒 Yetki Kuralları
 
 - **admin** → Tüm kullanıcıların listelerini ve maddelerini görebilir/güncelleyebilir/silebilir.
 - **user** → Sadece kendi oluşturduğu liste ve maddeleri görebilir/güncelleyebilir/silebilir.
 
+---
 
 ## 🌐 Yayın
 
 Proje şu adresten erişilebilir:  
 👉 [https://github.com/furkanyld/TO-DO-APP](https://github.com/furkanyld/TO-DO-APP) *(private repo)*
 
+---
 
 ## 📩 Geliştirici
 
+```markdown
 **Furkan Yıldız**  
-[www.linkedin.com/in/furkan-yıldız-584383254]
-[github.com/furkanyld]
+🔗 [www.linkedin.com/in/furkan-yıldız-584383254]
+🔗 [github.com/furkanyld]
 
