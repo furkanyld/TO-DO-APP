@@ -1,4 +1,4 @@
-![Go CI](https://github.com/furkanyld/TO-DO-APP/actions/workflows/go.yml/badge.svg)
+![Go CI](https://github.com/furkanyld/TO-DO-APP/actions/workflows/go.yml/badge.svg?branch=master)
 
 # 📝 TO-DO App (Backend)
 
@@ -190,6 +190,6 @@ Proje şu adresten erişilebilir:
 
 ```markdown
 **Furkan Yıldız**  
-🔗 [www.linkedin.com/in/furkan-yıldız-584383254]
-🔗 [github.com/furkanyld]
+🔗 [LinkedIn](https://www.linkedin.com/in/furkan-yıldız-584383254)  
+🔗 [GitHub](https://github.com/furkanyld)
 
