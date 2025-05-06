@@ -1,3 +1,4 @@
+![Go CI](https://github.com/furkanyld/TO-DO-APP/actions/workflows/go.yml/badge.svg)
 
 # 📝 TO-DO App (Backend)
 
