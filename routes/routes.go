@@ -15,10 +15,11 @@ func SetupRoutes(router *gin.Engine) {
 
 	protected.GET("/getTodos", controllers.GetTodos)
 	protected.POST("/createTodo", controllers.CreateTodo)
-	protected.PUT("/updateTodos/:id", controllers.UpdateTodo)
-	protected.DELETE("/deleteTodos/:id", controllers.DeleteTodo)
-	protected.POST("/lists/:id/items", controllers.CreateTodoItem)
-	protected.GET("/lists/:id/items", controllers.GetTodoItems)
-	protected.PUT("/items/:id", controllers.UpdateTodoItem)
-	protected.DELETE("/items/:id", controllers.DeleteTodoItem)
+	protected.PUT("/updateTodo/:id", controllers.UpdateTodo)
+	protected.DELETE("/deleteTodo/:id", controllers.DeleteTodo)
+	protected.POST("/lists/:id/addItem", controllers.CreateTodoItem)
+	protected.GET("/lists/:id/getItems", controllers.GetTodoItems)
+	protected.PUT("/updateItem/:id", controllers.UpdateTodoItem)
+	protected.DELETE("/deleteItem/:id", controllers.DeleteTodoItem)
+
 }
